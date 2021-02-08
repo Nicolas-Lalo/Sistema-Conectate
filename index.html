@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ayuntamiento Tekantó 2018-2021</title>
+  <link  rel="icon"   href="dist/img/escudo.png" type="image/png" />
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/alertify.css">
+  <link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/themes/default.css">  
+  <script src="plugins/alertifyjs/alertify.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+</head>
+ <body class="hold-transition login-page">
+  <script src="conn.js"></script>
+<div class="login-box">
+  <div class="login-logo">
+
+    <!--<a><b>Conecta Ayuntamiento </b>Iniciar sesión</a>--> 
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <center>
+         <img class= "ima" src="dist/img/usuario.jpg">
+      </center>
+      
+      <p class="login-box-msg"> Iniciar sesión
+<form method="POST">
+      
+        <div class="input-group mb-3">
+          <input type="email" id = email class="form-control" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" id = password class="form-control" placeholder="Password" autocomplete="off" >
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+
+          <!-- /.col -->
+          <div class="col-7">
+              <button onclick="iniciar()" class="btn btn-primary btn-block" type="Button">Iniciar sesión</button>
+          </div>
+          <!-- /.col --></form>
+        </div>
+      <p class="mb-1">
+        <a href="login/reset.html">¿Olvidaste tu Contraseña?</a>
+      </p>
+      <p class="mb-0">
+      </p>
+      
+    </div>
+
+  </div>
+</div>
+
+<style type="text/css">
+.ima{
+  height: 100px;
+  width: 100px;
+}
+.col-7{
+
+}
+.card{
+  border-radius: 20px;
+}
+.login-logo{
+  border-radius: 20px;
+}
+.login-box{
+  border-radius: 20px;
+}
+</style>
+
+
+
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+<script src="conn.js"></script>
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyAU4y2rKWP-NqSwqPEeBEmyftRwn-ZrS1U",
+    authDomain: "sistema-conectateayuntamiento.firebaseapp.com",
+    projectId: "sistema-conectateayuntamiento",
+    storageBucket: "sistema-conectateayuntamiento.appspot.com",
+    messagingSenderId: "134177903420",
+    appId: "1:134177903420:web:434bf889b90ed8e6e84439",
+    measurementId: "G-9QQDXH5NHY"
+  };
+firebase.initializeApp(firebaseConfig);</script>
+  <script type="text/javascript">
+  window.onload = function observador(){
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    
+    window.location = "inicio.php"
+  } else {
+  }
+});
+}</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
